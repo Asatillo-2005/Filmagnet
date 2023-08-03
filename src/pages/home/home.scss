@@ -1,0 +1,154 @@
+.section-home {
+    background-image: url(../../assets/imgs/hero-bg.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.home-box {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 293px;
+    padding-bottom: 155px;
+
+
+    .home-links {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        gap: 70px;
+    }
+
+}
+
+.ttt2{
+    display: flex;
+    flex-direction: column;
+    gap: 61px;
+}
+
+.home-links-title {
+    color: #B0DC00;
+    font-size: 26.539px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 0%;
+    letter-spacing: 7.829px;
+}
+
+.home-links-text {
+    color: #FFF;
+    font-size: 63.188px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 0%;
+    letter-spacing: 5.687px;
+
+    .home-links-text-span {
+        color: #CF0;
+        font-family: Homenaje;
+        font-size: 63.188px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 0%;
+        letter-spacing: 5.687px;
+    }
+}
+
+.home-links-text2 {
+    color: #FFF;
+    font-family: Homenaje;
+    font-size: 63.188px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 0%;
+}
+
+.home-links-mqgc{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 49px;   
+}
+
+.mqgc-item1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 18px;
+
+    .movie {
+        padding-top: 3px;
+        padding-bottom: 5.19px;
+        padding-left: 6px;
+        padding-right: 3px;
+        color: #000;
+        font-family: Imprima;
+        font-size: 14.291px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        border: 1px solid #FFF;
+        background: #FFF;
+    }
+
+    .quality {
+        padding-top: 1px;
+        padding-bottom: 2px;
+        padding-left: 5px;
+        padding-right: 4px;
+        border: 1px solid #FFF;
+        background: rgba(217, 217, 217, 0.00);
+        color: #FFF;
+        font-family: Imprima;
+        font-size: 12.792px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    .gener {
+        color: #FFF;
+        font-family: Imprima;
+        font-size: 17.589px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+}
+
+.calendar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+    color: #FFF;
+    font-family: Imprima;
+    font-size: 17.589px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.home-links-btn {
+    width: 160px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 12px;
+    padding-left: 15px;
+    padding-right: 15px;
+    gap: 7px;
+    color: #FFF;
+    font-family: Imprima;
+    font-size: 17.589px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    border-radius: 24px;
+    border: 2px solid #CF0;
+    background: rgba(36, 36, 36, 0.96);
+}
