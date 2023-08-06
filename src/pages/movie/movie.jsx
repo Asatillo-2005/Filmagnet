@@ -17,6 +17,9 @@ function Movie() {
   const [loading, setLoading] = useState()
   const [modalopen, setModalopen] = useState(false)
   const [modaldata, setModaldata] = useState()
+  const elPosition1 = useRef()
+  const elPosition = useRef()
+  const elPosition3 = useRef()
 
   function Fetch() {
     fetch('https://64c9fecab2980cec85c2b76e.mockapi.io/movie/movie')
@@ -74,16 +77,37 @@ function Movie() {
                         </div>
                       </div>
                       <button className="delet" onClick={() => onDelet(item?.id)}>delet</button>
-                      <button className="modal-edit1" onClick={() =>{
-                        setModalopen(true) 
-                        setModaldata(item)} 
-                       }>edit</button>
+                      <button className="modal-edit1" onClick={() => {
+                        setModalopen(true)
+                        setModaldata(item)
+                      }
+                      }>edit</button>
                     </div>
+                    <div className="position1" onClick={() => {
+                      elPosition1.current.classList.add('open-1')
+                      elPosition.current.classList.add('open-2')
+                      elPosition3.current.classList.add('open-3')
+                      console.log("true");
+                    }}>
+                      <div className="item" ref={elPosition1}></div>
+                      <div className="item1" ref={elPosition}></div>
+                    </div>
+                    <div className="item-close" ref={elPosition3} onClick={((evt) => {
+                      if (evt.target.matches('.item-close')) {
+                        elPosition1.current.classList.remove('open-1')
+                        elPosition.current.classList.remove('open-2')
+                        console.log("ish");
+                      elPosition3.current.classList.remove('open-3')
+                      }
+                      else {
+                        console.log("lo");
+                      }
+                    })}></div>
                   </li>
                 )
               })
             }
-            <Modal setModalopen={setModalopen} modalopen={modalopen} modaldata={modaldata}  />
+            <Modal setModalopen={setModalopen} modalopen={modalopen} modaldata={modaldata} />
           </ul>
         </div>
       </div>
@@ -92,3 +116,4 @@ function Movie() {
 }
 
 export default Movie
+
