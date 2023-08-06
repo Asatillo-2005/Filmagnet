@@ -1,6 +1,6 @@
 import "./movie.scss"
 import { NavLink as Link } from "react-router-dom"
-import { useEffect, useState } from "react"
+import { useEffect, useState, useRef } from "react"
 
 // import imges
 import movie1 from "../../assets/svg/movie-watch.svg"
@@ -9,17 +9,36 @@ import movie3 from "../../assets/imgs/movie-bg-image.png"
 import movie4 from "../../assets/imgs/imge-movei.png"
 // import imges
 
+import Modal from "../../components/modal/modal.jsx"
 
 function Movie() {
 
   const [data, setData] = useState([])
   const [loading, setLoading] = useState()
+  const [modalopen, setModalopen] = useState(false)
+  const [modaldata, setModaldata] = useState()
 
-  useEffect(() => {
+  function Fetch() {
     fetch('https://64c9fecab2980cec85c2b76e.mockapi.io/movie/movie')
       .then((res) => res.json())
       .then((data) => setData(data))
-  }, [])
+
+  }
+
+  useEffect(() => {
+    Fetch()
+  }, [loading])
+
+  function onDelet(id) {
+    setLoading(true)
+    fetch(`https://64c9fecab2980cec85c2b76e.mockapi.io/movie/movie/${id}`, {
+      method: 'DELETE',
+    }).then(res => res.json())
+      .then(data => {
+        console.log(data);
+        setLoading(false)
+      })
+  }
 
   return (
     <section className="section-movie">
@@ -41,7 +60,7 @@ function Movie() {
               data.map((item, index) => {
                 return (
                   <li className="movie-link2-links">
-                    <Link to={`/movie_inner/${item.id}`} > <img src={item.img} alt="error" width={" 294.977px"} /></Link>
+                    <Link to={`/movie_inner/${item.id}`} > <img className="img" src={item.img} alt="error" width={" 294.977px"} /></Link>
                     <div className="n-y-q-t-r">
                       <div className="name-year">
                         <p className="name">{item.name.slice(0, 9)}</p>
@@ -54,11 +73,17 @@ function Movie() {
                           <span className="rating"><img src={movie2} alt="error" />{item.rating}</span>
                         </div>
                       </div>
+                      <button className="delet" onClick={() => onDelet(item?.id)}>delet</button>
+                      <button className="modal-edit1" onClick={() =>{
+                        setModalopen(true) 
+                        setModaldata(item)} 
+                       }>edit</button>
                     </div>
                   </li>
                 )
               })
             }
+            <Modal setModalopen={setModalopen} modalopen={modalopen} modaldata={modaldata}  />
           </ul>
         </div>
       </div>

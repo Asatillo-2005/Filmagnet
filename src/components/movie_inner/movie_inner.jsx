@@ -5,16 +5,16 @@ import { useEffect, useRef, useState } from "react"
 
 // import imges
 import inner1 from "../../assets/svg/movie_inner-share.svg"
-// import inner2 from "../../assets/svg/movie_inner-calender.svg"
-// import inner3 from "../../assets/svg/movie_inner-watch2.svg"
-// import inner4 from "../../assets/svg/movie_inner-star.svg"
+import inner2 from "../../assets/svg/movie-inner-calender.svg"
+import inner3 from "../../assets/svg/movie-inner-watch2.svg"
+import inner4 from "../../assets/svg/movie-inner-star.svg"
 import inner5 from "../../assets/svg/hero-link-links-material-play.svg"
 
 function Movie_inner() {
 
     const elModal = useRef()
     const elPlay = useRef()
-    const [paus, setPaus] = useState(true)
+    const [paus, setPaus] = useState(false)
     const [getdata, setGetdata] = useState([])
     const { movieId } = useParams()
 
@@ -43,14 +43,14 @@ function Movie_inner() {
                                         <div className="movei_inner-movei">Movie</div>
                                         <div className="movie_inner-quality">{getdata.quality}</div>
                                         <div className="movie_inner-gener">{getdata.gener}</div>
-                                        <div className="movei_inner-time"><img src="" alt="error" /> {getdata.time}</div>
-                                        <div className="movie_inner-calender"><img src="" alt="error" />{getdata.year}</div>
+                                        <div className="movei_inner-time"><img src={inner2} alt="error" /> {getdata.time}</div>
+                                        <div className="movie_inner-calender"><img src={inner3} alt="error" />{getdata.year}</div>
                                     </div>
                                     <div className="movie_inner-shares">
                                         <h3 className="movei_inner-share1"><img src={inner1} alt="error" />Share</h3>
                                         <div className="show-star-rating">
                                             <h4 className="rate-the-show">Rate The Show</h4>
-                                            <h3 className="movie_inner-rating"><img src="" alt="error" /> {getdata.rating}</h3>
+                                            <h3 className="movie_inner-rating"><img src={inner4} alt="error" /> {getdata.rating}</h3>
                                         </div>
                                         <button className="movei_inner-btn" onClick={(() => {
                                             elModal.current.classList.add('open-modal')

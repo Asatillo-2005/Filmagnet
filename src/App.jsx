@@ -9,6 +9,7 @@ import Primium from "./pages/primium/primium.jsx"
 // impor pages
 import Movie_inner from "./components/movie_inner/movie_inner.jsx"
 import Header from "./components/header/header.jsx"
+import Edit from "./components/edit/edit.jsx"
 
 function App() {
   
@@ -22,8 +23,8 @@ function App() {
         <Route path="/web" element={<Web/>} />
         <Route path="/primium" element={<Primium/>} />
         <Route path="/movie_inner/:movieId" element={<Movie_inner/>} />
+        {/* <Route path="/edit" element={<Edit/>} /> */}
       </Routes>
-     {/* <Movie/> */}
     </>
   )
 }
