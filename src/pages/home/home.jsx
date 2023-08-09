@@ -15,11 +15,15 @@ import wallper8 from "../../assets/imgs/home-wallpaper8.jpg"
 import React, { useRef, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 
 // Import Swiper styles
 import "swiper/css";
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 
-
+import Hero from "../../components/hero/hero"
+import Footer from "../../components/footer/footer"
 
 
 function Home() {
@@ -27,7 +31,18 @@ function Home() {
     <section className="section-home">
       <div className="home-swiper">
         <Swiper
-          className="mySwiper"
+          //  spaceBetween={40}
+          //  centeredSlides={true}
+           autoplay={{
+             delay: 2000,
+             speed:1000,
+             disableOnInteraction:false,
+           }}
+           pagination={{
+             clickable: true,
+           }}
+           modules={[Autoplay]}
+           className="mySwiper"
         >
           <SwiperSlide><img src={wallper1} alt="error" /></SwiperSlide>
           <SwiperSlide><img src={wallper2} alt="error" /></SwiperSlide>
@@ -61,7 +76,8 @@ function Home() {
           </ul>
         </div>
       </div>
-
+     <Hero/>
+     <Footer/>
     </section>
   )
 }

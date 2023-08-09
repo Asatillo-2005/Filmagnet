@@ -19,54 +19,33 @@
 
 .movie-link1 {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    gap: 480px;
-}
+    padding-left: 400px;
+    padding-top: 80px;
 
-.movie-links1 {
-    display: flex;
-    flex-direction: column;
-    align-items: self-start;
-    justify-content: space-between;
-    gap: 41px;
+    .movie-links1 {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        gap: 34px;
 
-    .movie-links1-str {
-        color: #CF0;
-        font-family: Imprima;
-        font-size: 17.589px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
-    }
+        .movie-links1-h4 {
+            color: #CF0;
+            font-size: 17.589px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
 
-    .movie-links1-title {
-        color: #FFF;
-        font-family: Homenaje;
-        font-size: 44px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 0%;
-    }
-}
-
-.movie-links2 {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 22px;
-
-    .movies {
-        color: #FFF;
-        font-family: Imprima;
-        font-size: 17.589px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
-        padding: 11px 43px;
-        border-radius: 24px;
-        border: 0px solid #CF0;
-        background: rgba(46, 46, 46, 0.96);
+        .movie-links1-h2 {
+            color: #FFF;
+            font-size: 44px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 0%;
+        }
     }
 }
 
@@ -174,50 +153,6 @@
     }
 }
 
-.position1{
-    width: 30px;
-    height: 30px;
-    background-color: black;
-    border-radius: 50%;
-    position: relative;
-    right: -132px;
-    top: -645px;
-    display: flex;
-    flex-direction: column;
-    cursor: pointer;
-}
-.item{
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background-color: black;
-    transition: 0.5s linear;
-}
-.item1{
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background-color:black;
-    transition: 0.5s linear;
-}
-.open-1{
-    transform: translateY(106%); 
-}
-.open-2{
-    transform: translateY(210%);
-}
-.item-close{
-    display: none;
-    position: absolute;
-    cursor: pointer;
-    transform: translateX(440%);
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background-color:red;
-}
-.open-3{
+.delet-edit {
     display: flex;
 }

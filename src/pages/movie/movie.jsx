@@ -9,39 +9,16 @@ import movie3 from "../../assets/imgs/movie-bg-image.png"
 import movie4 from "../../assets/imgs/imge-movei.png"
 // import imges
 
-import Modal from "../../components/modal/modal.jsx"
+import axios from "axios"
 
 function Movie() {
 
   const [data, setData] = useState([])
-  const [loading, setLoading] = useState()
-  const [modalopen, setModalopen] = useState(false)
-  const [modaldata, setModaldata] = useState()
-  const elPosition1 = useRef()
-  const elPosition = useRef()
-  const elPosition3 = useRef()
-
-  function Fetch() {
-    fetch('https://64c9fecab2980cec85c2b76e.mockapi.io/movie/movie')
-      .then((res) => res.json())
-      .then((data) => setData(data))
-
-  }
 
   useEffect(() => {
-    Fetch()
-  }, [loading])
-
-  function onDelet(id) {
-    setLoading(true)
-    fetch(`https://64c9fecab2980cec85c2b76e.mockapi.io/movie/movie/${id}`, {
-      method: 'DELETE',
-    }).then(res => res.json())
-      .then(data => {
-        console.log(data);
-        setLoading(false)
-      })
-  }
+    axios('https://64c9fecab2980cec85c2b76e.mockapi.io/movie/movie').then(res=>setData(res.data))
+    
+  },[])
 
   return (
     <section className="section-movie">
@@ -49,20 +26,15 @@ function Movie() {
         <div className="movie-box">
           <ul className="movie-link1">
             <li className="movie-links1">
-              <h4 className="movie-links1-str">ONLINE STREAMING</h4>
-              <h2 className="movie-links1-title">Upcoming Movies</h2>
-            </li>
-            <li className="movie-links2">
-              <div className="movies">Movies</div>
-              <div className="movies">TVs Shows</div>
-              <div className="movies">Anime</div>
+              <h4 className="movie-links1-h4">BEST TV SERIES</h4>
+              <h2 className="movie-links1-h2">World’s Best TV Series</h2>
             </li>
           </ul>
           <ul className="movie-link21">
             {
               data.map((item, index) => {
                 return (
-                  <li className="movie-link2-links">
+                  <li className="movie-link2-links" key={data}>
                     <Link to={`/movie_inner/${item.id}`} > <img className="img" src={item.img} alt="error" width={" 294.977px"} /></Link>
                     <div className="n-y-q-t-r">
                       <div className="name-year">
@@ -76,38 +48,11 @@ function Movie() {
                           <span className="rating"><img src={movie2} alt="error" />{item.rating}</span>
                         </div>
                       </div>
-                      <button className="delet" onClick={() => onDelet(item?.id)}>delet</button>
-                      <button className="modal-edit1" onClick={() => {
-                        setModalopen(true)
-                        setModaldata(item)
-                      }
-                      }>edit</button>
                     </div>
-                    <div className="position1" onClick={() => {
-                      elPosition1.current.classList.add('open-1')
-                      elPosition.current.classList.add('open-2')
-                      elPosition3.current.classList.add('open-3')
-                      console.log("true");
-                    }}>
-                      <div className="item" ref={elPosition1}></div>
-                      <div className="item1" ref={elPosition}></div>
-                    </div>
-                    <div className="item-close" ref={elPosition3} onClick={((evt) => {
-                      if (evt.target.matches('.item-close')) {
-                        elPosition1.current.classList.remove('open-1')
-                        elPosition.current.classList.remove('open-2')
-                        console.log("ish");
-                      elPosition3.current.classList.remove('open-3')
-                      }
-                      else {
-                        console.log("lo");
-                      }
-                    })}></div>
                   </li>
                 )
               })
             }
-            <Modal setModalopen={setModalopen} modalopen={modalopen} modaldata={modaldata} />
           </ul>
         </div>
       </div>

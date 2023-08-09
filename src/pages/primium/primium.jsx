@@ -53,6 +53,13 @@ function Primium() {
                 setName('')
                 setImg('')
                 setBg('')
+                setYear('')
+                setTime('')
+                setGener('')
+                setDesc('')
+                setUrl('')
+                setQuality('')
+                setRating('')
             })
         }
     }

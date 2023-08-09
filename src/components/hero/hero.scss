@@ -1,0 +1,217 @@
+
+.section-hero{
+    background-image: url("../../assets/imgs/movie-bg-image.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.hero-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 83px;
+    padding-bottom: 117px;
+}
+
+.hero-link {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 48px;
+}
+
+.hero-link-links1 {
+    display: flex;
+    justify-content:start;
+    align-items: center;
+    gap: 471px;
+}
+
+.hero-link-links1-item1 {
+    display: flex;
+    flex-direction: column;
+    gap: 41px;
+
+    .hero-link-links1-item1-h4 {
+        color: #CF0;
+        font-family: Imprima;
+        font-size: 17.589px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    .hero-link-links1-item1-h2 {
+        color: #FFF;
+        font-family: Homenaje;
+        font-size: 44px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 0%;
+    }
+}
+
+.hero-link-links1-item2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 22px;
+
+    .hero-link-links1-item2-items {
+        padding: 11px 43px;
+        border-radius: 24px;
+        border: 0px solid #CF0;
+        background: rgba(46, 46, 46, 0.96);
+        color: #FFF;
+        font-family: Imprima;
+        font-size: 17.589px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+}
+
+.hero-link-links2 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
+
+    .hero-link-links2-films {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        gap: 33.31px;
+    }
+}
+
+.hero-link-links2-films-about {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 21px;
+
+}
+
+.name-year {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 133px;
+
+    .films-name {
+       width: 124px;
+        color: #FFF;
+        font-family: Electrolize;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    .films-year {
+        color: #CF0;
+        font-family: Imprima;
+        font-size: 17.589px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+}
+
+.quality-time-rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 157px;
+
+    .films-quality {
+        border: 1px solid #FFF;
+        background: rgba(217, 217, 217, 0.00);
+        padding-top: 1px;
+        padding-bottom: 2px;
+        padding-left: 5px;
+        padding-right: 4px;
+        color: #FFF;
+        font-family: Imprima;
+        font-size: 12.792px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    .films-time-rating {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 29.36px;
+
+        .films-time {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 3px;
+            color: #FFF;
+            font-family: Imprima;
+            font-size: 10.393px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+
+        .films-rating {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 3px;
+            color: #FFF;
+            font-family: Imprima;
+            font-size: 10.393px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+    }
+}
+
+.hero-link-links3{
+    // margin-top: 121px;
+    width: 1230px;
+    min-height: 542px;
+    display: flex;
+    flex-direction: column;
+    gap: 130px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+  
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .hero-data-img{
+    cursor: pointer;
+  }

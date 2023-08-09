@@ -25,7 +25,7 @@ function Movie_inner() {
     }, [])
 
     return (
-        <section className="section-movie_inner" style={{ backgroundImage: `url(${getdata.bg})` }}>
+        <section className="section-movie_inner" style={{ backgroundImage: `url(${getdata.bg})`} } >
             <div className="container">
                 <div className="movie_inner-box">
                     <ul className="movie_inner-link">
@@ -59,9 +59,9 @@ function Movie_inner() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="movie_inner-desc">
+                            {/* <div className="movie_inner-desc">
                                 {getdata.desc}
-                            </div>
+                            </div> */}
                         </li>
                     </ul>
                     <div className="modal" ref={elModal} onClick={((evt) => {
