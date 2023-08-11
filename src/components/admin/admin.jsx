@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react"
 import { Toast } from 'primereact/toast';
 import React from 'react';
 import { Accordion, AccordionTab } from 'primereact/accordion';
+import ReactPlayer from 'react-player'
 
 function Admin() {
 
@@ -27,6 +28,7 @@ function Admin() {
     const [id, setId] = useState()
     const [reflesh, setReflesh] = useState()
     const [loading, setLoading] = useState()
+    const [play, setPlay] = useState()
      const showSuccess = () => {
         toast.current.show({ severity: 'success', summary: 'Success', detail: 'Message Content', life: 3000 });
     }
@@ -90,8 +92,7 @@ function Admin() {
 
     return (
         <section className="section-admin">
-            <Toast ref={toast} />
-
+            <Toast ref={toast} />   
             <div className="container">
                 <div className="admin-box">
                     <ul className="admin-link">
@@ -118,12 +119,14 @@ function Admin() {
                         <div className="about-modal" ref={elModal11} onClick={(evt) => {
                             if (evt.target.matches('.about-modal')) {
                                 elModal11.current.classList.remove('about-open')
+                                setPlay(false)
+                                console.log("is");
                             }
                         }}>
-                            <div className="about-modal-inner" ref={elModal12}>
+                            <div className="about-modal-inner" ref={elModal12}  style={{ backgroundImage: `url(${id?.bg})`} }>
                                 <div className="inner-delet" onClick={()=>{onDelte(id?.id)}}>DELETE</div>
 
-                                <Accordion activeIndex={0} className="accordin" >
+                                <Accordion activeIndex={false} className="accordin" >
                                     <AccordionTab header="EDIT" className="accordin2">
                                         <div className="m-0">
                                             <input className="about-modal-inner-input" type="text" placeholder="name" value={name} onChange={(e) => { setName(e.target.value) }} />
@@ -138,13 +141,22 @@ function Admin() {
                                             <input className="about-modal-inner-input" type="text" placeholder="url" value={url} onChange={(e) => { setUrl(e.target.value) }} />
                                             <button className="about-modal-inner-btn" onClick={() => {
                                                 onUpdate(id?.id)
-
+                                                
                                             }}>UPDATE</button>
                                         </div>
                                     </AccordionTab>
                                 </Accordion>
 
-
+                                <div className="about-movie12">
+                                    <p className="about-movie-1">{id?.name}</p>
+                                    <span className="about-movie-1">{id?.year}</span>
+                                    <span className="about-movie-1">{id?.time}</span>
+                                    <span className="about-movie-1">{id?.gener}</span>
+                                    <span className="about-movie-1">{id?.quality}</span>
+                                    <span className="about-movie-1">{id?.rating}</span>
+                                    <span className="about-movie-img"><img src={id?.img} alt="error" /></span>
+                                    <span className="about-movie-url"><ReactPlayer url={id?.url} width={"300px"} height={"200px"} playing={play} /></span>
+                                </div>
                             </div>
                         </div>
                     </ul>
