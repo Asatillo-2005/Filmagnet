@@ -36,7 +36,7 @@ function Header() {
                     <div className="slb">
                         <div className="search"> <img src={img5} alt="error" /> <img src={img6} alt="error" /> </div>
                         <div className="language"><img src={img3} alt="error" /> <span className="language-span">EN <img src={img4} alt="error" /></span></div>
-                        <button className="slb-btn">SIGN IN</button>
+                        <button className="slb-btn"><Link className={"header-links-navlink"} to={'/admin'} >SIGN IN</Link></button>
                     </div>
                 </div>
             </div>
